@@ -72,8 +72,9 @@ runs:
       run: |
         ssh staging "
         cd ${{ inputs.repo_path }}
-        ./${{ inputs.script_name }}
+        bash ${{ inputs.script_name }}
         "
       shell: bash
       env:
         SSH_AUTH_SOCK: ${{ inputs.ssh_agent_sock }}
+        PROCESS_NAME: ${{ inputs.supervisor_process_name }}
