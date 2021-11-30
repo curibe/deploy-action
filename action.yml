@@ -28,6 +28,10 @@ inputs:
   script_name:
     description: Name of the script to execute
     required: true
+  supervisor_process_name:
+    description: Name of the supervisor process
+    required: true
+    default: ${{ github.event.repository.name }}
 
 runs:
   using: "composite"
