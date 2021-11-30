@@ -58,6 +58,7 @@ runs:
 
     - name: Pulling updates from repo
       run: |
+        echo "repo name: ${{github.event.repository.name}}"
         ssh staging "
         cd ${{ inputs.repo_path }}
         git switch ${{ inputs.main_branch }}
