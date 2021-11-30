@@ -75,7 +75,7 @@ runs:
     - name: Deploy
       run: |
         ssh staging "
-        PROCESS_NAME={{ inputs.supervisor_process_name }}
+        PROCESS_NAME=${{ inputs.supervisor_process_name }}
         cd ${{ inputs.repo_path }}
         bash ${{ inputs.script_name }}
         "
